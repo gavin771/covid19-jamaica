@@ -20,14 +20,14 @@ export function handler(event, context, callback) {
   })
     .then(response => {
       console.log(response);
-      callback(null, {
+      return callback(null, {
         // return null to show no errors
         statusCode: 200, // http status code
         body: response.data.data
       });
     })
     .catch(error => {
-      callback(null, {
+      return callback(null, {
         // return null to show no errors
         statusCode: 400, // http status code
         body: error
