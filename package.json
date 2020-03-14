@@ -5,9 +5,12 @@
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
-    "start": "npm run develop",
-    "build": "gatsby build --prefix-paths",
-    "serve": "gatsby serve"
+    "start": "run-p start:**",
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/functions",
+    "build": "gatsby build && netlify-lambda build src/functions",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/functions"
   },
   "dependencies": {
     "@stackbit/gatsby-plugin-menus": "0.0.4",
@@ -17,7 +20,10 @@
     "gatsby": "2.3.30",
     "gatsby-plugin-google-analytics": "^2.1.37",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.4.12",
     "gatsby-plugin-twitter": "^2.1.20",
+    "gatsby-remark-images": "^3.1.49",
+    "gatsby-remark-images-modal": "0.0.4",
     "gatsby-source-filesystem": "2.0.28",
     "gatsby-transformer-remark": "2.3.8",
     "js-yaml": "^3.12.2",
@@ -34,5 +40,10 @@
     "react-script-tag": "^1.1.2",
     "rehype-react": "^3.0.2",
     "sprintf-js": "^1.1.2"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^1.0.2",
+    "netlify-lambda": "^1.6.3",
+    "npm-run-all": "^4.1.5"
   }
 }
