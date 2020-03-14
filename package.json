@@ -7,7 +7,7 @@
     "develop": "gatsby develop",
     "start": "run-p start:**",
     "start:app": "npm run develop",
-    "start:lambda": "netlify-lambda serve src/functions",
+    "start:lambda": "netlify-lambda serve src/functions -p 8081",
     "build": "gatsby build && netlify-lambda build src/functions",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda build src/functions"
