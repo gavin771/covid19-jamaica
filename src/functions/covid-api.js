@@ -23,7 +23,7 @@ export function handler(event, context, callback) {
       callback(null, {
         // return null to show no errors
         statusCode: 200, // http status code
-        body: response
+        body: response.data.data
       });
     })
     .catch(error => {
