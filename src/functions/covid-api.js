@@ -21,7 +21,7 @@ export async function handler(event, context, callback) {
     });
    // let { data } = response.data;
     console.log(response)
-    let data = response.find(el=>el.country === 'Jamaica')
+    let data = response.data.find(el=>el.country === 'Jamaica')
     console.log(data)
     callback(null, {
       statusCode: 200,
