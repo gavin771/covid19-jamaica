@@ -41,6 +41,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-component`,
           `gatsby-remark-images-modal`,
+{resolve: `gatsby-plugin-subscribers`, options:{id: 'a432c6f20-4f04-4803-b082-7d773aa19edc'} }, 
           {
             resolve: `gatsby-remark-images`,
             options: {
