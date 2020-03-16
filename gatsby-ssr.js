@@ -19,6 +19,8 @@ exports.onRenderBody = function({ setHeadComponents, setPostBodyComponents }) {
       <script src={safePrefix("assets/js/plugins.js")} />
       <script src={safePrefix("assets/js/prism.js")} data-manual />
       <script src={safePrefix("assets/js/main.js")} />
+<script type="text/javascript">var subscribersSiteId='432c6f20-4f04-4803-b082-7d773aa19edc';</script>
+<script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script>
     </React.Fragment>
   ]);
 };
