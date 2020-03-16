@@ -5,22 +5,24 @@ export async function handler(event, context, callback) {
   const rapidapiHost = "covid-19-coronavirus-statistics.p.rapidapi.com";
   const rapidapiUrl =
     "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Jamaica";
-
+  const api = "https://coronavirus-19-api.herokuapp.com/countries"
   try {
     const response = await axios({
       method: "GET",
-      url: rapidapiUrl,
+      url:api, // rapidapiUrl,
       headers: {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": rapidapiHost,
-        "x-rapidapi-key": rapidapiKey
+       // "content-type": "application/octet-stream",
+     //   "x-rapidapi-host": rapidapiHost,
+     //   "x-rapidapi-key": rapidapiKey
       },
       params: {
-        country: "Jamaica"
+        //country: "Jamaica"
       }
     });
-    let { data } = response.data;
-    console.log(data);
+//const apiRes = 
+   // let { data } = response.data;
+    console.log(response);
+let data = response.find(el=>el.country==="Jamaica")
     callback(null, {
       statusCode: 200,
       headers: {
