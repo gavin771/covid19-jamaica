@@ -21,7 +21,7 @@ export async function handler(event, context, callback) {
     });
 //const apiRes = 
    // let { data } = response.data;
-let data = response.find(el=>el.country==="Jamaica")
+let data = response.find(el=>el.country=="Jamaica")
 console.log(data)
     callback(null, {
       statusCode: 200,
