@@ -28,7 +28,7 @@ export async function handler(event, context, callback) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data.covid19Stats[0])
     });
   } catch (err) {
     callback(null, {
