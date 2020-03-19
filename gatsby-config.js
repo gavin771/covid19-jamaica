@@ -42,7 +42,7 @@ module.exports = {
           `gatsby-remark-component`,
           {
             resolve: `gatsby-plugin-subscribers`,
-            options: { id: "a432c6f20-4f04-4803-b082-7d773aa19edc" }
+            options: { id: process.env.SUBSCRIBER || "" }
           },
           {
             resolve: `gatsby-remark-images`,
