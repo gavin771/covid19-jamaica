@@ -40,7 +40,6 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-component`,
-          `gatsby-remark-images-modal`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -68,28 +67,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-151955170-2"
+        trackingId: process.env.GOOGLE_ANALYTICS || "none"
       }
     }
-    // {
-    //   resolve: `gatsby-source-twitter-custom`,
-    //   options: {
-    //     credentials: {
-    //       consumer_key: process.env.TWITTER_CONSUMER_KEY,
-    //       consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    //       bearer_token: process.env.TWITTER_BREARER_TOKEN
-    //     },
-    //     query: {
-    //       endpoint: `lists/members`,
-    //       params: {
-    //         list_id: `1238656160300924928`,
-    //         include_rts: false,
-    //         exclude_replies: false,
-    //         tweet_mode: `extended`,
-    //         count: 20
-    //       }
-    //     }
-    //   }
-    // }
   ]
 };
