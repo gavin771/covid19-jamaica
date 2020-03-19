@@ -28,7 +28,11 @@ export async function handler(event, context, callback) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data.covid19Stats[0])
+      body: JSON.stringify({
+        cases: data.covid19Stats[0].confirmed,
+        deaths: data.covid19Stats[0].deaths,
+        recovered: data.covid19Stats[0].recovered
+      })
     });
   } catch (err) {
     callback(null, {
