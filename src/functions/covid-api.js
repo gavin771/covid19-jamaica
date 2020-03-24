@@ -5,21 +5,21 @@ export async function handler(event, context, callback) {
   const rapidapiHost = "covid-19-coronavirus-statistics.p.rapidapi.com";
   const rapidapiUrl =
     "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Jamaica";
-  const api = "https://coronavirus-19-api.herokuapp.com/countries";
+  const api = "https://coronavirus-19-api.herokuapp.com/countries/Jamaica";
   try {
     const response = await axios({
       method: "GET",
-      url: rapidapiUrl,
-      headers: {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": rapidapiHost,
-        "x-rapidapi-key": rapidapiKey
-      },
-      params: {
-        country: "Jamaica"
-      }
+      url: api,//rapidapiUrl,
+      // headers: {
+      //   "content-type": "application/octet-stream",
+      //   "x-rapidapi-host": rapidapiHost,
+      //   "x-rapidapi-key": rapidapiKey
+      // },
+      // params: {
+      //   country: "Jamaica"
+      // }
     });
-    let { data } = response.data;
+    let data = response.data;
     // console.log(response);
     // let data = response.data.find(el => el.country === "Jamaica");
     console.log(data);
@@ -29,9 +29,12 @@ export async function handler(event, context, callback) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        cases: data.covid19Stats[0].confirmed,
-        deaths: data.covid19Stats[0].deaths,
-        recovered: data.covid19Stats[0].recovered
+        cases: data.cases,
+        deaths: data.deaths,
+        recovered: data.recovered
+        // cases: data.covid19Stats[0].confirmed,
+        // deaths: data.covid19Stats[0].deaths,
+        // recovered: data.covid19Stats[0].recovered
       })
     });
   } catch (err) {
