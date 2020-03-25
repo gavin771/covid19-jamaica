@@ -41,7 +41,7 @@ export default class Docs extends React.Component {
               />
             )}
             <div className="inner-small">
-              <h1 className="post-title">Local Solutions</h1>
+              <h1 className="post-title">Local Creations</h1>
               <div className="post-subtitle">
                 Discover some awesome creations done by local designers,
                 developers and creators in response to COVID-19.
