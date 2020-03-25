@@ -43,8 +43,8 @@ export default class Docs extends React.Component {
             <div className="inner-small">
               <h1 className="post-title">Local Solutions</h1>
               <div className="post-subtitle">
-                Discover some awesome tech based solutions that have been
-                created by Jamaicans in response to COVID-19.
+                Discover some awesome creations done by local designers,
+                developers and creators in response to COVID-19.
               </div>
             </div>
           </header>
