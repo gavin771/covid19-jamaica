@@ -49,7 +49,7 @@ export default class Docs extends React.Component {
             </div>
           </header>
           <div className="outer">
-            <div className="inner" style={{ maxWidth: "1500px" }}>
+            <div className="inner" style={{ maxWidth: "1400px" }}>
               <div className="docs-content">
                 <DocsMenu
                   {...this.props}
