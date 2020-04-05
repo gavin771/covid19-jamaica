@@ -176,6 +176,8 @@
 .toc-item {
   color: inherit;
   margin-bottom: 0.625rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
 
   &.current,
   &.current-parent {
