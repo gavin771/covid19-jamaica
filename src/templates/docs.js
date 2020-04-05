@@ -15,7 +15,7 @@ export default class Docs extends React.Component {
     let child_pages = _.orderBy(
       _.filter(
         getPages(this.props.pageContext.pages, child_pages_path),
-        item => _.get(item, "base") !== "index.md"
+        (item) => _.get(item, "base") !== "index.md"
       ),
       "frontmatter.weight"
     );
@@ -49,14 +49,17 @@ export default class Docs extends React.Component {
             </div>
           </header>
           <div className="outer">
-            <div className="inner">
+            <div className="inner" style={{ maxWidth: "1500px" }}>
               <div className="docs-content">
                 <DocsMenu
                   {...this.props}
                   page={this.props.pageContext}
                   site={this.props.pageContext.site}
                 />
-                <article className="post type-docs">
+                <article
+                  className="post type-docs"
+                  style={{ maxWidth: "inherit" }}
+                >
                   <div className="post-inside" style={{ padding: "1em 0 0;" }}>
                     <header
                       className="post-header"
@@ -65,7 +68,7 @@ export default class Docs extends React.Component {
                         position: "inherit",
                         textAlign: "inherit",
                         paddingTop: "inherit",
-                        paddingBottom: "4em"
+                        paddingBottom: "4em",
                       }}
                     >
                       <h1 className="post-title line-left">
