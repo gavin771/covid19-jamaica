@@ -83,7 +83,7 @@ export default class Docs extends React.Component {
                         url={`${this.props.pageContext.site.siteMetadata.siteUrl}${this.props.pageContext.url}`}
                         title={`${this.props.pageContext.frontmatter.title} - Jamaican COVID-19 Resource Site`}
                         via={null}
-                        hashtags="#covid19 #covid19Jamaica"
+                        tags={["covid19", "covid19Jamaica"]}
                       />
                       {root_page_path !== current_page_path && (
                         <React.Fragment>
