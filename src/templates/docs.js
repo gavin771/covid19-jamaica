@@ -4,9 +4,11 @@ import _ from "lodash";
 import { Layout } from "../components/index";
 import DocsMenu from "../components/DocsMenu";
 import { htmlToReact, getPages, Link, safePrefix, toStyleObj } from "../utils";
+import ShareButtons from "../components/ShareButtons";
 
 export default class Docs extends React.Component {
   render() {
+    // console.log(`${this.props.pageContext.frontmatter.title} - Jamaican COVID-19 Resource Site`);
     let root_page_path =
       _.get(this.props, "pageContext.site.data.doc_sections.root_folder") +
       "index.md";
@@ -77,6 +79,12 @@ export default class Docs extends React.Component {
                     </header>
                     <div className="post-content" style={{ border: "0" }}>
                       {htmlToReact(_.get(this.props, "pageContext.html"))}
+                      <ShareButtons
+                        url={`${this.props.pageContext.site.siteMetadata.siteUrl}${this.props.pageContext.url}`}
+                        title={`${this.props.pageContext.frontmatter.title} - Jamaican COVID-19 Resource Site`}
+                        via={null}
+                        hashtags="#covid19 #covid19Jamaica"
+                      />
                       {root_page_path !== current_page_path && (
                         <React.Fragment>
                           {has_children && (
